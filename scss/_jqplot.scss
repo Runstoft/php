@@ -1,10 +1,11 @@
-/* jqPlot */
+// Styles for jqPlot for the Metro theme
 
-// rules for the plot target div. These will be cascaded down to all plot elements according to css rules
+// rules for the plot target div.
+// These will be cascaded down to all plot elements according to css rules
 .jqplot-target {
   position: relative;
   color: #222;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: $font-family-base;
   font-size: 1em;
 }
 
@@ -223,9 +224,9 @@ table.jqplot-cursor-tooltip {
 .jqplot-highlighter-tooltip,
 .jqplot-canvasOverlay-tooltip {
   border: 1px solid #ccc;
-  font-size: 1em;
+  font-size: 0.75em;
   white-space: nowrap;
-  background: rgba(208, 208, 208, 0.8);
+  background: rgba(208, 208, 208, 0.5);
   padding: 1px;
 }
 
@@ -244,13 +245,13 @@ div.jqplot-cursor-legend-swatch {
   height: 0.7em;
 }
 
+// Styles added to the plot target container when there is an error go here.
 .jqplot-error {
-  // Styles added to the plot target container when there is an error go here.
   text-align: center;
 }
 
+// Styling of the custom error message div goes here.
 .jqplot-error-message {
-  // Styling of the custom error message div goes here.
   position: relative;
   top: 46%;
   display: inline-block;

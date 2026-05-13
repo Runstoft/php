@@ -1,15 +1,32 @@
+@import "../../bootstrap/scss/breadcrumb";
+
 .breadcrumb-navbar {
-  padding: $breadcrumb-navbar-padding-y $breadcrumb-navbar-padding-x;
-  margin-bottom: $breadcrumb-navbar-margin-bottom;
-  background-color: $breadcrumb-navbar-bg;
+  color: $button-color;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
   .breadcrumb-item {
-    + .breadcrumb-comment {
-      padding-left: $breadcrumb-item-padding-x;
+    + .breadcrumb-item::before,
+    &::before {
+      width: 10px;
+      color: #eee;
+
+      /* The arrow "U+0203A" (SINGLE RIGHT-POINTING ANGLE QUOTATION MARK) */
+      content: "\203A";
     }
 
     .icon {
-      margin: 0;
+      display: none;
     }
+  }
+
+  .breadcrumb-comment {
+    font-style: italic;
   }
 }

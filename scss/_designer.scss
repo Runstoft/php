@@ -1,21 +1,8 @@
-$minus-img: '../img/designer/minus.png';
-$plus-img: '../img/designer/plus.png';
-$top-panel-img: '../img/designer/top_panel.png';
-$small-tab-img: '../img/designer/small_tab.png';
-$frams1-img: '../img/designer/1.png';
-$frams2-img: '../img/designer/2.png';
-$frams3-img: '../img/designer/3.png';
-$frams4-img: '../img/designer/4.png';
-$frams5-img: '../img/designer/5.png';
-$frams6-img: '../img/designer/6.png';
-$frams7-img: '../img/designer/7.png';
-$frams8-img: '../img/designer/8.png';
-$resize-img: '../img/designer/resize.png';
-
-/* Designer */
+// Designer styles for the Metro theme
 .input_tab {
-  background-color: #a6c7e1;
-  color: $black;
+  background-color: #efefef;
+  color: #000;
+  border: 1px solid #ccc;
 }
 
 .content_fullscreen {
@@ -30,8 +17,8 @@ $resize-img: '../img/designer/resize.png';
 }
 
 #canvas {
-  background-color: $white;
-  color: $black;
+  background-color: #fff;
+  color: #000;
 }
 
 canvas.designer {
@@ -45,15 +32,14 @@ canvas.designer {
 }
 
 .designer_tab {
-  background-color: $white;
-  color: $black;
+  color: #333;
   border-collapse: collapse;
-  border: 1px solid #aaa;
+  border: 1px solid #ccc;
   z-index: 1;
   user-select: none;
 
   .header {
-    background: linear-gradient(#b8e6fa, #b8e6fa 6%, #cdf5fd 10%, #dbffff 10%, #9bd2f6 50%, #9bd2f6 100%);
+    background-color: #f6f6f6;
   }
 }
 
@@ -62,37 +48,39 @@ canvas.designer {
   cursor: move;
   padding: 1px;
   font-weight: bold;
+  vertical-align: middle;
 }
 
 .tab_zag_2 {
-  background: linear-gradient(#fffa96 0%, #fffa96 39%, #ffe796 40%, #ffe796 100%);
   text-align: center;
   cursor: move;
   padding: 1px;
   font-weight: bold;
+  background-color: #f6f6f6;
+  vertical-align: middle;
 }
 
 .tab_field {
-  background: $white;
-  color: $black;
+  background: #fff;
+  color: #000;
   cursor: default;
 
   &:hover {
     background-color: #cfc;
-    color: $black;
+    color: #000;
     background-repeat: repeat-x;
     cursor: default;
   }
 }
 
 .tab_field_3 {
-  background-color: #ffe6e6;
-  color: $black;
+  background-color: #ffe6e6 !important;
+  color: #000;
   cursor: default;
 
   &:hover {
     background-color: #cfc;
-    color: $black;
+    color: #000;
     background-repeat: repeat-x;
     cursor: default;
   }
@@ -102,14 +90,10 @@ canvas.designer {
   white-space: nowrap;
   position: absolute;
   background-color: #9f9;
-  color: $black;
+  color: #000;
   z-index: 3;
   border: #0c6 solid 1px;
   display: none;
-}
-
-#designer_body #page_content {
-  margin: 0;
 }
 
 .scroll_tab {
@@ -120,25 +104,22 @@ canvas.designer {
 
 .designer_Tabs {
   cursor: default;
-  color: #05b;
+  color: #333;
   white-space: nowrap;
   text-decoration: none;
   text-indent: 3px;
-  font-weight: bold;
   margin-left: 2px;
   text-align: left;
-  background: linear-gradient($white, #dfe5e7 70%, $white 70%, $white 100%);
-  border: #ccc solid 1px;
+  border: #ccc solid 0;
 
   &:hover {
     cursor: default;
-    color: #05b;
-    background: #fe9;
+    color: #666;
+    background: #eee;
     text-indent: 3px;
-    font-weight: bold;
     white-space: nowrap;
     text-decoration: none;
-    border: #99f solid 1px;
+    border: #eee solid 0;
     text-align: left;
   }
 }
@@ -160,15 +141,14 @@ canvas.designer {
   padding-right: 2px;
   cursor: default;
   width: 1px;
-  color: $black;
-  background: linear-gradient(#b8e6fa, #b8e6fa 6%, #cdf5fd 10%, #dbffff 10%, #9bd2f6 50%, #9bd2f6 100%);
+  color: #000;
+  background-repeat: repeat-x;
 }
 
 .small_tab {
   vertical-align: top;
-  background-color: #0064ea;
-  color: $white;
-  background-image: url($small-tab-img);
+  background-color: #666;
+  color: #fff;
   cursor: default;
   text-align: center;
   font-weight: bold;
@@ -179,7 +159,7 @@ canvas.designer {
 
   &:hover {
     vertical-align: top;
-    color: $white;
+    color: #fff;
     background-color: #f96;
     cursor: default;
     padding-left: 2px;
@@ -192,13 +172,13 @@ canvas.designer {
 }
 
 .small_tab_pref {
-  background: linear-gradient(#b8e6fa, #b8e6fa 6%, #cdf5fd 10%, #dbffff 10%, #9bd2f6 50%, #9bd2f6 100%);
+  background-color: #f6f6f6;
   text-align: center;
   width: 1px;
 
   &:hover {
     vertical-align: top;
-    color: $white;
+    color: #fff;
     background-color: #f96;
     cursor: default;
     text-align: center;
@@ -208,25 +188,15 @@ canvas.designer {
   }
 }
 
-.butt {
-  border: #47a solid 1px;
-  font-weight: bold;
-  background-color: $white;
-  color: $black;
-  vertical-align: baseline;
-}
-
 .L_butt2_1 {
-  padding: 1px;
+  padding-left: 5px;
   text-decoration: none;
   vertical-align: middle;
   cursor: default;
 
   &:hover {
-    padding: 0;
-    border: #09c solid 1px;
-    background: #fe9;
-    color: $black;
+    padding-left: 5px;
+    color: #000;
     text-decoration: none;
     vertical-align: middle;
     cursor: default;
@@ -239,68 +209,32 @@ canvas.designer {
   height: 10px;
 }
 
-.frams1 {
-  background: url($frams1-img) no-repeat right bottom;
-}
-
-.frams2 {
-  background: url($frams2-img) no-repeat left bottom;
-}
-
-.frams3 {
-  background: url($frams3-img) no-repeat left top;
-}
-
-.frams4 {
-  background: url($frams4-img) no-repeat right top;
-}
-
-.frams5 {
-  background: url($frams5-img) repeat-x center bottom;
-}
-
-.frams6 {
-  background: url($frams6-img) repeat-y left;
-}
-
-.frams7 {
-  background: url($frams7-img) repeat-x top;
-}
-
-.frams8 {
-  background: url($frams8-img) repeat-y right;
-}
-
 #osn_tab {
   position: absolute;
-  background-color: $white;
-  color: $black;
+  background-color: #fff;
+  color: #000;
+  width: 100% !important;
 }
 
 .designer_header {
-  background-color: #eaeef0;
-  color: $black;
-  text-align: center;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-  background-image: url($top-panel-img);
-  background-position: top;
-  background-repeat: repeat-x;
-  border-right: #999 solid 1px;
-  border-left: #999 solid 1px;
+  background-color: #f6f6f6;
+  border-top: 20px solid #fff;
+  color: #333;
+  display: block;
   height: 28px;
-  z-index: 101;
-  width: 100%;
+  margin-left: -20px;
+  margin-top: -60px;
+  padding: 5px 20px;
   position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 101;
 
-  a,
-  span {
+  a {
     display: block;
     float: left;
     margin: 3px 1px 4px;
     height: 20px;
-    border: 1px dotted $white;
   }
 
   .M_bord {
@@ -324,22 +258,12 @@ canvas.designer {
 
 a {
   &.M_butt_Selected_down_IE,
-  &.M_butt_Selected_down {
-    border: 1px solid #c0c0bb;
-    background-color: #9f9;
-    color: $black;
-
-    &:hover {
-      border: 1px solid #09c;
-      background-color: #fe9;
-      color: $black;
-    }
-  }
-
+  &.M_butt_Selected_down,
+  &.M_butt_Selected_down_IE:hover,
+  &.M_butt_Selected_down:hover,
   &.M_butt:hover {
-    border: 1px solid #09c;
-    background-color: #fe9;
-    color: $black;
+    background-color: #eee;
+    color: #000;
   }
 }
 
@@ -347,8 +271,22 @@ a {
   z-index: 98;
   position: relative;
   float: right;
-  background-color: #eaeef0;
-  border: #999 solid 1px;
+  background-color: #f6f6f6;
+  border: #ccc solid 1px;
+  border-top: 0;
+  margin-right: -20px;
+}
+
+.content_fullscreen #layer_menu {
+  margin-right: 0;
+}
+
+#layer_menu.float-start {
+  margin-left: -20px;
+}
+
+.content_fullscreen #layer_menu.float-start {
+  margin-left: 0;
 }
 
 #layer_upd_relation {
@@ -368,7 +306,7 @@ a {
 }
 
 #layer_menu_sizer {
-  background-image: url($resize-img);
+  background-image: url("../img/designer/resize.png");
   cursor: ew-resize;
 
   .icon {
@@ -378,7 +316,7 @@ a {
 
 .panel {
   position: fixed;
-  top: 60px;
+  top: 90px;
   right: 0;
   width: 350px;
   max-height: 500px;
@@ -392,45 +330,48 @@ a {
   &.trigger {
     position: fixed;
     text-decoration: none;
-    top: 60px;
+    top: 90px;
     right: 0;
-    color: $white;
+    color: #fff;
     padding: 10px 40px 10px 15px;
-    background: #333 url($plus-img) 85% 55% no-repeat;
+    background: #333 url("../img/designer/plus.png") 85% 55% no-repeat;
     border: 1px solid #444;
     display: block;
     z-index: 102;
 
     &:hover {
       color: #080808;
-      background: #fff696 url($plus-img) 85% 55% no-repeat;
+      background: #fff696 url("../img/designer/plus.png") 85% 55% no-repeat;
       border: 1px solid #999;
     }
   }
 
   &.active.trigger {
-    background: #222 url($minus-img) 85% 55% no-repeat;
+    background: #222 url("../img/designer/minus.png") 85% 55% no-repeat;
     z-index: 999;
 
     &:hover {
-      background: #fff696 url($minus-img) 85% 55% no-repeat;
+      background: #fff696 url("../img/designer/minus.png") 85% 55% no-repeat;
     }
   }
 }
 
 .toggle_container .block {
-  background-color: #dbe4e8;
+  background-color: $browse-marker-background;
   border-top: 1px solid #999;
+
+  img.ic_s_info {
+    filter: invert(70%);
+  }
 }
 
 .history_table {
-  text-align: center;
+  opacity: 1;
   cursor: pointer;
-  background-color: #dbe4e8;
+}
 
-  &:hover {
-    background-color: #99c;
-  }
+.history_table2 {
+  opacity: 0.7;
 }
 
 #ab {
@@ -452,16 +393,29 @@ a {
   width: auto;
   height: auto;
   background: #efefef;
-  border: 1px solid grey;
+  border: 1px solid #ccc;
+  border-top: 0;
   overflow: hidden;
   z-index: 50;
   padding: 2px;
+  margin-top: 0;
+  margin-left: -20px;
+}
 
-  &.right {
-    float: right;
-    right: 0;
-  }
+.content_fullscreen .side-menu {
+  margin-left: 0;
+}
 
+.side-menu.right {
+  float: right;
+  right: 0;
+}
+
+.content_fullscreen .side-menu.right {
+  margin-right: 0;
+}
+
+.side-menu {
   .hide {
     display: none;
   }
@@ -470,23 +424,32 @@ a {
     display: block;
     float: none;
     overflow: hidden;
-    line-height: 1em;
   }
 
   img,
+  span,
   .text {
     float: left;
+    padding-left: 2px;
   }
 }
 
 #name-panel {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #ccc;
   text-align: center;
   background: #efefef;
-  width: 100%;
   font-size: 1.2em;
-  padding: 5px;
+  padding: 10px;
   font-weight: bold;
+  margin-top: -20px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.content_fullscreen #name-panel {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 #container-form {

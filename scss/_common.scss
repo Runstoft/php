@@ -1,9 +1,185 @@
+#li_select_fontsize {
+  display: none;
+}
+
+/* Override style formats by html tags */
+
+font[color="red"],
+span[style="color: #FF0000"] {
+  color: $browse-warning-color !important;
+}
+
+strong {
+  font-weight: normal;
+}
+
+/* login */
+
+body#loginform {
+  margin: 0;
+  background-color: #666;
+
+  .card-header,
+  form#login_form label {
+    display: none !important;
+  }
+
+  #page_content {
+    background-color: $navi-background;
+    margin: 0 !important;
+    padding: 20px;
+    margin-top: 10% !important;
+    min-height: 240px;
+  }
+
+  div.container {
+    color: $body-bg;
+    text-align: left;
+    width: 48em;
+    margin-left: auto;
+    margin-right: auto;
+
+    &::before {
+      color: $body-bg;
+      background: url('../img/user.svg');/* The user avatar icon */
+      content: "";
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      background-color: $th-color;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+      height: 240px;
+      width: 240px;
+      line-height: 1;
+      text-align: center;
+    }
+  }
+
+  h1 {
+    display: inline-block;
+    text-align: left;
+    color: $body-bg;
+    font-size: 2.5em;
+    padding-top: 0;
+    margin-right: -50%;
+    line-height: 2;
+  }
+
+  a.logo,
+  .pma-fieldset legend {
+    display: none;
+  }
+
+  .item {
+    margin-bottom: 10px;
+  }
+
+  input {
+    &.textfield {
+      width: 100%;
+      border: 1px solid #fff;
+      background: $navi-color;
+      color: $th-color;
+      box-sizing: border-box;
+      margin: 0;
+
+      &:hover,
+      &:focus {
+        background-color: #fff;
+        color: #333;
+        box-sizing: border-box;
+        margin: 0;
+      }
+    }
+
+    &[type="submit"] {
+      background-color: $th-color;
+      border: none;
+      padding: 7px;
+      margin: 0;
+    }
+  }
+
+  select {
+    margin: 0 !important;
+    border: 1px solid #ccc;
+    background: white;
+    color: #333;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: $font-family-base;
+    min-width: 100%;
+
+    &:hover {
+      border: 1px solid $navi-color;
+    }
+  }
+
+  br {
+    display: none;
+  }
+
+  .card-body {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    .col-sm-8 {
+      // Force 100% because the form label is hidden
+      width: 100%;
+    }
+
+    a {
+      color: white;
+    }
+  }
+
+  .card,
+  .card-footer,
+  .pma-fieldset {
+    border: none;
+    color: $navi-color;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    background: none;
+
+    &:first-child {
+      border-bottom: none;
+      margin: 0;
+    }
+
+    &.tblFooters {
+      border: none;
+      margin: 0;
+      clear: none;
+    }
+  }
+}
+
+.turnOffSelect {
+  user-select: none;
+}
+
 #page_content {
-  margin: 0 0.5em;
+  margin: 20px !important;
+}
+
+h2 {
+  // Hiding icons in the page titles
+  img {
+    display: none;
+  }
+
+  a img {
+    display: inline;
+  }
 }
 
 .data {
-  margin: 0 0 12px;
+  margin: 10px 0;
 }
 
 button.mult_submit,
@@ -27,55 +203,165 @@ button.mult_submit {
   color: #235a81;
 }
 
-#navbarDropdown > img {
-  display: none;
+dfn:hover {
+  cursor: help;
+}
+
+.data th {
+  border-bottom: 1px solid $border-color;
+}
+
+.data th a:hover {
+  color: #999 !important;
+}
+
+.column_heading,
+.column_action {
+  border: 1px solid $border-color;
+  background-color: #f6f6f6;
+}
+
+a img {
+  border: 0;
+}
+
+hr {
+  color: $border-color;
+  background-color: $border-color;
+  border: 0;
+  height: 1px;
+}
+
+form {
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+input {
+  &[type="text"],
+  &[type="password"],
+  &[type="number"] {
+    border: 1px solid $browse-gray-color;
+    color: $th-color;
+    padding: 5px;
+    font-family: $font-family-base;
+    background-color: $body-bg;
+
+    &:focus {
+      border: 1px solid $navi-hover-background;
+      color: $main-color;
+    }
+  }
+
+  &:not(.form-control)[type="text"],
+  &:not(.form-control)[type="password"],
+  &:not(.form-control)[type="number"] {
+    margin: 6px;
+  }
+}
+
+.sqlbutton {
+  margin-top: 1em;
+  margin-left: 0 !important;
+  margin-right: 14px !important;
+}
+
+button:not(.accordion-button) {
+  margin-left: 14px;
+  padding: 4px;
+  color: $button-color;
+  text-decoration: none;
+  background-color: $button-background;
+
+  &:hover {
+    background-color: $button-hover;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+button.jsAccountLocking {
+  background: none;
+  color: var(--bs-link-color);
+  margin-left: 0;
+
+  &:hover {
+    background: none;
+    color: var(--bs-link-color);
+    text-decoration: underline;
+  }
+}
+
+button.jsPrintButton {
+  background: none;
+  color: #444;
+  margin-left: 0;
+  padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+
+  &:hover {
+    background: none;
+    color: #444;
+    text-decoration: none;
+    border: 1px solid #444;
+  }
 }
 
 textarea {
-  &.char {
-    margin: 6px;
-  }
-
-  &.charField {
-    width: 95%;
-  }
+  overflow: visible;
+  border: 1px solid $browse-gray-color;
+  color: $th-color;
+  background-color: $body-bg;
 }
 
 .pma-fieldset {
-  margin-top: 1em;
-  border-radius: 4px 4px 0 0;
-  border: #aaa solid 1px;
-  padding: 0.5em;
-  background: #eee;
-  text-shadow: 1px 1px 2px $white;
-  box-shadow: 1px 1px 2px $white inset;
-}
+  margin-top: 20px;
+  border: 1px solid $border-color;
+  padding: 20px;
+  background-color: $th-background;
 
-.pma-fieldset {
   .pma-fieldset {
-    margin: 0.8em;
-    border: 1px solid #aaa;
-    background: #e8e8e8;
-  }
-
-  legend {
-    float: none;
-    font-weight: bold;
-    color: #444;
-    padding: 5px 10px;
-    border-radius: 2px;
-    border: 1px solid #aaa;
-    background-color: $white;
-    max-width: 100%;
-    box-shadow: 3px 3px 15px #bbb;
-    width: initial;
-    font-size: 1em;
+    margin: 20px;
+    margin-bottom: 0;
+    background-color: $body-bg;
+    border: none;
   }
 }
 
-// 3.4
-.datatable {
-  table-layout: fixed;
+legend {
+  float: none;
+  padding: 0 5px;
+  width: initial;
+  font-size: 1em;
+}
+
+/* buttons in some browsers (eg. Konqueror) are block elements,
+   this breaks design */
+button {
+  display: inline;
+}
+
+img,
+button {
+  vertical-align: middle;
+}
+
+select {
+  border: 1px solid $browse-gray-color;
+  color: $th-color;
+  padding: 4px;
+  font-family: $font-family-base;
+  background-color: $body-bg;
+  max-width: 17em;
+
+  &:not(.form-select) {
+    margin: 5px;
+  }
+
+  &:focus {
+    border: 1px solid $navi-hover-background;
+    color: $main-color;
+  }
 }
 
 /* classes */
@@ -88,36 +374,34 @@ textarea {
 }
 
 .separator {
-  color: $white;
-  text-shadow: 0 1px 0 $black;
+  color: #fff;
+}
+
+.result_query {
+  background: $th-background;
+  margin-bottom: 20px;
 }
 
 div.tools {
-  padding: 0.2em;
+  padding: 10px;
+  text-align: right;
 
-  a {
-    color: #3a7ead !important;
+  span {
+    float: right;
+    margin: 6px 2px;
   }
 
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  // avoid a thick line since this should be used under another fieldset
-  border-top: 0;
-  text-align: right;
-  float: none;
-  clear: both;
-  border-radius: 0 0 4px 4px;
+  a {
+    color: $blue-header !important;
+  }
 }
 
 .pma-fieldset.tblFooters {
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  // avoid a thick line since this should be used under another fieldset
+  margin-top: -1px;
   border-top: 0;
   text-align: right;
   float: none;
   clear: both;
-  border-radius: 0 0 4px 4px;
 }
 
 div.null_div {
@@ -131,12 +415,10 @@ div.null_div {
   .formelement {
     float: left;
     margin-right: 0.5em;
-    // IE
-    white-space: nowrap;
   }
 
-  // revert for Gecko
-  div[class=formelement] {
+  /* revert for Gecko */
+  div[class="formelement"] {
     white-space: normal;
   }
 }
@@ -144,43 +426,47 @@ div.null_div {
 button.mult_submit {
   border: none;
   background-color: transparent;
+  color: $browse-pointer-color;
+  margin: 0;
 }
 
-/**
- * marks table rows/cells if the db field is in a where condition
- */
+.structure_actions_dropdown {
+  background-color: $browse-marker-background;
+  color: $main-color;
+
+  .icon {
+    vertical-align: middle !important;
+  }
+}
+
+/* marks table rows/cells if the db field is in a where condition */
+
 .condition {
-  border-color: $black !important;
+  border-color: $browse-warning-color !important;
 }
 
 th.condition {
-  border-width: 1px 1px 0 1px;
-  border-style: solid;
+  border: 1px solid $browse-warning-color;
+  background: $browse-warning-color;
+  color: $body-bg !important;
+
+  a {
+    border: 1px solid $browse-warning-color;
+    background: $browse-warning-color;
+    color: $body-bg !important;
+  }
 }
 
-td.condition {
-  border-width: 0 1px 0 1px;
-  border-style: solid;
-}
+td {
+  &.condition {
+    border: 1px solid;
+  }
 
-tr:last-child td.condition {
-  border-width: 0 1px 1px 1px;
-}
-
-/* rtl:begin:remove */
-.before-condition {
-  // for first th which must have right border set (ltr only)
-  border-right: 1px solid $black;
-}
-
-/* rtl:end:remove */
-
-/**
- * cells with the value NULL
- */
-td.null {
-  font-style: italic;
-  color: #7d7d7d !important;
+  // cells with the value NULL
+  &.null {
+    font-style: italic;
+    color: #7d7d7d;
+  }
 }
 
 table {
@@ -202,15 +488,15 @@ img.lightbulb {
 .pdflayout {
   overflow: hidden;
   clip: inherit;
-  background-color: $white;
+  background-color: #fff;
   display: none;
-  border: 1px solid $black;
+  border: 1px solid #000;
   position: relative;
 }
 
 .pdflayout_table {
   background: #d3dce3;
-  color: $black;
+  color: #000;
   overflow: hidden;
   clip: inherit;
   z-index: 2;
@@ -219,20 +505,14 @@ img.lightbulb {
   cursor: move;
   position: absolute;
   font-size: 80%;
-  border: 1px dashed $black;
+  border: 1px dashed #000;
 }
 
-// Doc links in SQL
+/* Doc links in SQL */
 .cm-sql-doc {
   text-decoration: none;
-  border-bottom: 1px dotted $black;
+  border-bottom: 1px dotted #999;
   color: inherit !important;
-}
-
-// no extra space in table cells
-td .icon {
-  image-rendering: pixelated;
-  margin: 0;
 }
 
 .selectallarrow {
@@ -244,20 +524,40 @@ td .icon {
   margin-left: 2em;
 }
 
-// message boxes: error, confirmation
+/* message boxes: error, confirmation */
 #pma_errors,
 #pma_demo,
 #pma_footer {
   position: relative;
-  padding: 0 0.5em;
+  padding: 20px;
+}
+
+#pma_errors #pma_errors {
+  padding: 0;
 }
 
 .confirmation {
-  color: $black;
-  background-color: pink;
+  color: $button-color;
+  background-color: $browse-warning-color;
 }
 
-// end messageboxes
+.pma-fieldset.confirmation legend {
+  background-color: $browse-warning-color;
+}
+
+.error {
+  border: 1px solid $browse-warning-color !important;
+  padding: 5px;
+  color: $button-color;
+  background-color: $browse-warning-color;
+}
+
+/* end messageboxes */
+
+.column_name {
+  font-size: 80%;
+  margin: 5px 2px;
+}
 
 .new_central_col {
   width: 100%;
@@ -270,57 +570,36 @@ td .icon {
 }
 
 .tblHeaders {
-  font-weight: bold;
-  color: $black;
-  background: #d3dce3;
+  font-family: $font-family-bold;
+  color: $th-color;
+  background: $th-background;
+  font-weight: normal;
 }
 
 div.tools,
 .tblFooters {
   font-weight: normal;
-  color: $black;
-  background: #d3dce3;
+  color: $th-color;
+  background: $th-background;
 }
 
-.tblHeaders a {
-  &:link,
-  &:active,
-  &:visited {
-    color: #00f;
+.tblHeaders,
+div.tools,
+.tblFooters {
+  a {
+    &:link,
+    &:active,
+    &:visited {
+      color: #00f;
+    }
+
+    &:hover {
+      color: #f00;
+    }
   }
 }
 
-div.tools a {
-  &:link,
-  &:visited,
-  &:active {
-    color: #00f;
-  }
-}
-
-.tblFooters a {
-  &:link,
-  &:active,
-  &:visited {
-    color: #00f;
-  }
-}
-
-.tblHeaders a:hover,
-div.tools a:hover,
-.tblFooters a:hover {
-  color: #f00;
-}
-
-.error {
-  border: 1px solid maroon !important;
-  margin-left: 2px;
-  padding: 1px 2px;
-  color: $black;
-  background: pink;
-}
-
-// disabled text
+/* disabled text */
 .disabled {
   color: #666;
 
@@ -352,87 +631,12 @@ td.disabled {
   display: none;
 }
 
-/**
- * login form
- */
-body#loginform {
-  margin: 1em 0 0 0;
-  text-align: center;
-
-  h1,
-  a.logo {
-    display: block;
-    text-align: center;
-  }
-
-  div.container {
-    text-align: left;
-    width: 30em;
-    margin: 0 auto;
-  }
-}
-
-div.container.modal_form {
-  margin: 0 auto;
-  width: 30em;
-  text-align: center;
-  background: $white;
-  z-index: 999;
-}
-
-div#modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: $white;
-  z-index: 900;
-}
-
-label.col-3.d-flex.align-items-center {
-  font-weight: bolder;
-}
-
-.commented_column {
-  border-bottom: 1px dashed $black;
-}
-
-.column_attribute {
-  font-size: 70%;
-}
-
-.column_name {
-  font-size: 80%;
-  margin: 5px 2px;
-}
-
-.central_columns_navigation {
-  padding: 1.5% 0 !important;
-}
-
-.message_errors_found {
-  margin-top: 20px;
-}
-
-.repl_gui_skip_err_cnt {
-  width: 30px;
-}
-
-.color_gray {
-  color: gray;
-}
-
-.max_height_400 {
-  max-height: 400px;
-}
-
 li.last.database {
   // Avoid having the last item of the tree hidden behind the scroll bar
   margin-bottom: 15px !important;
 }
 
-// zoom search
+/* zoom search */
 div#dataDisplay {
   input,
   select {
@@ -453,7 +657,9 @@ form.clock {
   text-align: center;
 }
 
-// table stats
+/* end Calendar */
+
+/* table stats */
 div#tablestatistics table {
   float: left;
   margin-bottom: 0.5em;
@@ -462,11 +668,10 @@ div#tablestatistics table {
   min-width: 16em;
 }
 
-// end table stats
+/* END table stats */
 
-// Heading
+/* Heading */
 #topmenucontainer {
-  padding-right: 1em;
   width: 100%;
 }
 
@@ -488,10 +693,17 @@ div#tablestatistics table {
   display: none;
 }
 
+#span_table_comment {
+  font-weight: normal;
+  font-style: italic;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
 #textSQLDUMP {
   width: 95%;
   height: 95%;
-  font-family: Consolas, "Courier New", Courier, monospace;
+  font-family: $font-family-monospace;
   font-size: 110%;
 }
 
@@ -504,16 +716,17 @@ div#tablestatistics table {
   visibility: hidden;
   background-color: #ffc;
   color: #060;
-  border: 0.1em solid $black;
+  border: 0.1em solid #000;
   padding: 0.5em;
 }
 
-// user privileges
+/* user privileges */
+
 #fieldset_add_user_login {
   div.item {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid silver;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 0.3em;
     margin-bottom: 0.3em;
   }
@@ -526,12 +739,6 @@ div#tablestatistics table {
     text-align: right;
     padding-right: 0.5em;
     margin-bottom: 0;
-  }
-
-  input {
-    width: 12em;
-    clear: right;
-    max-width: 100%;
   }
 
   span.options {
@@ -547,9 +754,19 @@ div#tablestatistics table {
       width: 100%;
       max-width: 100%;
     }
+  }
 
-    input {
-      width: auto;
+  input {
+    width: 12em;
+    clear: right;
+    max-width: 100%;
+  }
+
+  span.options input {
+    width: auto;
+
+    &[type="button"] {
+      margin: 4px;
     }
   }
 }
@@ -577,12 +794,9 @@ div#tablestatistics table {
   float: left;
 }
 
-#fieldset_user_global_rights > legend input {
-  margin-left: 2em;
-}
-// end user privileges
+/* END user privileges */
 
-// serverstatus
+/* serverstatus */
 
 .linkElem:hover {
   text-decoration: underline;
@@ -607,7 +821,7 @@ div#serverstatusquerieschart {
   float: left;
   width: 500px;
   height: 350px;
-  margin-right: 50px;
+  padding-left: 30px;
 }
 
 div {
@@ -627,8 +841,6 @@ div {
 }
 
 div#chartVariableSettings {
-  border: 1px solid #ddd;
-  background-color: #e6e6e6;
   margin-left: 10px;
 }
 
@@ -639,13 +851,13 @@ table#chartGrid {
   }
 
   div.monitorChart {
-    background: #ebebeb;
-    border: none;
+    background: $th-background;
     min-width: 1px;
   }
 }
 
 div.tabLinks {
+  margin-left: 0.3em;
   float: left;
   padding: 5px 0;
 
@@ -665,9 +877,8 @@ div.tabLinks {
   border: 1px solid #ccc;
   margin: 0;
   padding: 3px;
-  background-color: $white;
+  background-color: #fff;
   z-index: 2;
-  box-shadow: 2px 2px 3px #666;
 }
 
 div {
@@ -709,9 +920,9 @@ div {
   padding-left: 7px;
 }
 
-// end serverstatus
+/* end serverstatus */
 
-// profiling
+/* profiling */
 
 div#profilingchart {
   width: 850px;
@@ -719,25 +930,20 @@ div#profilingchart {
   float: left;
 }
 
-#profilingchart .jqplot-highlighter-tooltip {
-  top: auto !important;
-  left: 11px;
-  bottom: 24px;
-}
+/* END profiling */
 
-// end profiling
+/* table charting */
 
-// table charting
 #resizer {
   border: 1px solid silver;
 }
 
-// make room for the resize handle
+/* make room for the resize handle */
 #inner-resizer {
   padding: 10px;
 }
 
-// querybox
+/* querybox */
 
 #togglequerybox {
   margin: 0 10px;
@@ -753,7 +959,6 @@ div#profilingchart {
 textarea {
   &#sqlquery {
     width: 100%;
-    border-radius: 4px;
     border: 1px solid #aaa;
     padding: 5px;
     font-family: inherit;
@@ -766,9 +971,9 @@ textarea {
   }
 }
 
-// end querybox
+/* end querybox */
 
-// main page
+/* main page */
 
 #mysqlmaininformation,
 #pmamaininformation {
@@ -776,14 +981,14 @@ textarea {
   width: 49%;
 }
 
-#maincontainer {
-  ul {
-    list-style-type: disc;
-    vertical-align: middle;
-  }
+#maincontainer ul {
+  list-style-type: square;
+  vertical-align: middle;
+  color: $th-color;
+  margin-left: 20px;
 
   li {
-    margin-bottom: 0.3em;
+    line-height: 1.5;
   }
 }
 
@@ -792,14 +997,34 @@ textarea {
   padding: 2px;
   margin-top: -3px;
   z-index: 801;
-  border-radius: 3px;
   border: solid 1px #888;
-  background: $white;
+  background: #fff;
 }
 
+/* END main page */
+
+/* iconic view for ul items */
+
+li {
+  br {
+    display: none;
+  }
+
+  &#li_mysql_client_version {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* END iconic view for ul items */
+
 #body_browse_foreigners {
-  background: #f3f3f3;
+  background: $navi-background;
   margin: 0.5em 0.5em 0 0.5em;
+}
+
+#bodyquerywindow {
+  background: $navi-background;
 }
 
 #bodythemes {
@@ -808,7 +1033,7 @@ textarea {
   text-align: center;
 
   img {
-    border: 0.1em solid $black;
+    border: 0.1em solid #000;
   }
 
   a:hover img {
@@ -819,12 +1044,23 @@ textarea {
 #selflink {
   clear: both;
   display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  width: 98%;
-  margin-left: 1%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-top: 1px solid silver;
   text-align: right;
-  border-top: 0.1em solid silver;
+}
+
+.operations_half_width {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.operations_full_width {
+  width: 100%;
+  clear: both;
 }
 
 #qbe_div_table_list,
@@ -832,21 +1068,19 @@ textarea {
   float: left;
 }
 
+kbd {
+  color: $main-color;
+  background-color: transparent;
+  box-shadow: none;
+}
+
 code {
   font-size: 1em;
+  color: $main-color;
 
   &.php {
     display: block;
-    padding-left: 1em;
-    margin-top: 0;
-    margin-bottom: 0;
-    max-height: 10em;
-    overflow: auto;
-  }
-
-  &.sql {
-    display: block;
-    padding: 1em;
+    padding-left: 0.3em;
     margin-top: 0;
     margin-bottom: 0;
     max-height: 10em;
@@ -854,38 +1088,28 @@ code {
   }
 }
 
-div.sqlvalidate {
+.sqlOuter code.sql,
+div.sqlvalidate,
+#inline_editor_outer {
   display: block;
   padding: 1em;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-height: 10em;
+  margin: 1em;
   overflow: auto;
-}
-
-.result_query {
-  div.sqlOuter {
-    background: #e5e5e5;
-    text-align: left;
-  }
-}
-
-#PMA_slidingMessage code.sql,
-div.sqlvalidate {
-  background: #e5e5e5;
+  background-color: $body-bg;
+  border: 1px solid $border-color;
 }
 
 textarea#partitiondefinition {
   height: 3em;
 }
 
-// for elements that should be revealed only via js
+/* for elements that should be revealed only via js */
 .hide {
   display: none;
 }
 
 #list_server {
-  list-style-type: none;
+  list-style-image: none;
   padding: 0;
 }
 
@@ -901,33 +1125,33 @@ div {
   }
 
   &.upload_progress_bar_outer {
-    border: 1px solid $black;
+    border: 1px solid #000;
     width: 202px;
     position: relative;
     margin: 0 auto 1em;
-    color: $body-color;
-
-    div.percentage {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 202px;
-    }
+    color: $main-color;
   }
 
   &.upload_progress_bar_inner {
-    background-color: #ddd;
+    background-color: $navi-background;
     width: 0;
     height: 12px;
     margin: 1px;
     overflow: hidden;
-    color: $black;
+    color: $browse-marker-color;
     position: relative;
+  }
 
-    div.percentage {
-      top: -1px;
-      left: -1px;
-    }
+  &.upload_progress_bar_outer div.percentage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 202px;
+  }
+
+  &.upload_progress_bar_inner div.percentage {
+    top: -1px;
+    left: -1px;
   }
 
   &#statustext {
@@ -947,35 +1171,24 @@ table {
 /**
   *  Validation error message styles
   */
+
 input {
-  &[type=text].invalid_value,
-  &[type=password].invalid_value,
-  &[type=number].invalid_value,
-  &[type=date].invalid_value {
+  &[type="text"].invalid_value,
+  &[type="password"].invalid_value,
+  &[type="number"].invalid_value,
+  &[type="date"].invalid_value .invalid_value {
     background: #fcc;
   }
-}
-
-select.invalid_value,
-.invalid_value {
-  background: #fcc;
 }
 
 /**
   *  Ajax notification styling
   */
+
+/* additional styles */
 .ajax_notification {
-  // The notification needs to be shown on the top of the page
   top: 0;
   position: fixed;
-  margin-top: 200px;
-  margin-right: auto;
-  margin-bottom: 0;
-  margin-left: auto;
-  // Keep a little space on the sides of the text
-  padding: 5px;
-  width: 350px;
-  // If this is not kept at a high z-index, the jQueryUI modal dialogs (z-index: 1000) might hide this
   z-index: 1100;
   text-align: center;
   display: inline;
@@ -983,11 +1196,17 @@ select.invalid_value,
   right: 0;
   background-image: url("../img/ajax_clock_small.gif");
   background-repeat: no-repeat;
-  background-position: 2%;
-  border: 1px solid var(--bs-warning-border-subtle);
-  background-color: var(--bs-warning-bg-subtle);
-  color: var(--bs-warning-text-emphasis);
-  border-radius: 5px;
+  background-position: 46%;
+  margin: 0;
+  background-color: $navi-color;
+  color: $main-color;
+  padding: 10px !important;
+  border: none;
+}
+
+.dismissable {
+  margin-left: -10px;
+  margin-top: -10px;
 }
 
 #loading_parent {
@@ -1003,7 +1222,7 @@ select.invalid_value,
   height: 100%;
   top: 0;
   left: 0;
-  background: $black;
+  background: #000;
   opacity: 0.7;
   z-index: 1000;
   overflow: hidden;
@@ -1013,20 +1232,15 @@ select.invalid_value,
   margin-right: 1em;
 }
 
-#addColumns input[type=radio] {
-  margin: 3px 0 0;
-  margin-left: 1em;
-}
-
 /**
  * Indexes
  */
+
 #index_frm {
   .index_info {
-    input[type=text],
+    input,
     select {
-      width: 100%;
-      margin: 0;
+      width: 14em;
       box-sizing: border-box;
     }
 
@@ -1068,7 +1282,7 @@ table#index_columns {
 
   select {
     width: 85%;
-    float: left;
+    float: right;
   }
 }
 
@@ -1084,32 +1298,39 @@ table#index_columns {
   }
 
   li {
-    background: #d3dce3;
+    background: $th-background;
     border: 1px solid #aaa;
-    color: $black;
+    color: $th-color;
     font-weight: bold;
     margin: 0.4em;
     padding: 0.2em;
-    border-radius: 2px;
   }
 }
 
-// config forms
+/* config forms */
+
 .config-form {
-  fieldset {
+  .pma-fieldset {
     margin-top: 0;
     padding: 0;
     clear: both;
-    border-radius: 0;
+    background: none;
+  }
 
+  legend {
+    display: none;
+  }
+
+  .pma-fieldset {
     p {
       margin: 0;
-      padding: 0.5em;
-      background: $white;
-      border-top: 0;
+      padding: 10px;
+      background: #fff;
+      font-family: $font-family-light;
+      font-size: 16px;
     }
 
-    // form error list
+    /* form error list */
     .errors {
       margin: 0 -2px 1em;
       padding: 0.5em 1.5em;
@@ -1118,11 +1339,11 @@ table#index_columns {
       border-style: solid;
       border-width: 1px 0;
       list-style: none;
-      font-family: $font-family-base;
+      font-family: sans-serif;
       font-size: small;
     }
 
-    // field error list
+    /* field error list */
     .inline_errors {
       margin: 0.3em 0.3em 0.3em;
       margin-left: 0;
@@ -1132,114 +1353,68 @@ table#index_columns {
       font-size: small;
     }
 
-    .doc {
-      margin-left: 1em;
+    table {
+      background-color: #fff;
     }
 
-    .disabled-notice {
-      margin-left: 1em;
-      font-size: 80%;
-      text-transform: uppercase;
-      color: #e00;
-      cursor: help;
+    label {
+      font-weight: normal;
     }
 
-    th {
-      padding: 0.3em 0.3em 0.3em;
-      padding-left: 0.5em;
-      text-align: left;
-      vertical-align: top;
-      background: transparent;
-      filter: none;
-      border-top: 1px #d5d5d5 solid;
-      border-right: none;
-
-      small {
-        display: block;
-        font-weight: normal;
-        font-family: $font-family-base;
-        font-size: x-small;
-        color: #444;
-      }
-    }
-
-    td {
-      padding-top: 0.3em;
-      padding-bottom: 0.3em;
-      vertical-align: top;
-      border-top: 1px #d5d5d5 solid;
-      border-right: none;
+    textarea {
+      margin: 5px;
+      padding: 5px;
     }
   }
+}
 
-  legend {
-    display: none;
+.insertRowTable textarea {
+  margin: 5px;
+  padding: 5px;
+}
+
+.config-form .card {
+  margin-top: 0;
+}
+
+.config-form fieldset {
+  th {
+    padding: 10px;
+    padding-left: 0.5em;
+    text-align: left;
+    vertical-align: top;
   }
 
-  span.checkbox {
-    padding: 2px;
-    display: inline-block;
-
-    &.custom {
-      padding: 1px;
-      border: 1px #edec90 solid;
-      background: #ffc;
-    }
+  .doc {
+    margin-left: 1em;
   }
 
-  // customized field
-  .custom {
-    background: #ffc;
-  }
-
-  .field-error {
-    border-color: #a11 !important;
-  }
-
-  input {
-    &[type=text],
-    &[type=password],
-    &[type=number] {
-      border: 1px #a7a6aa solid;
-      height: auto;
-
-      &:focus {
-        border: 1px #6676ff solid;
-        background: #f7fbff;
-      }
-    }
-  }
-
-  select,
-  textarea {
-    border: 1px #a7a6aa solid;
-    height: auto;
-
-    &:focus {
-      border: 1px #6676ff solid;
-      background: #f7fbff;
-    }
-  }
-
-  .field-comment-mark {
-    font-family: serif;
-    color: #007;
+  .disabled-notice {
+    margin-left: 1em;
+    font-size: 80%;
+    text-transform: uppercase;
+    color: #e00;
     cursor: help;
-    padding: 0 0.2em;
-    font-weight: bold;
-    font-style: italic;
   }
 
-  .field-comment-warning {
-    color: #a00;
+  td {
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    vertical-align: top;
+    border-bottom: 1px $navi-color solid;
+    border-right: none;
   }
 
-  // error list
-  dd {
-    margin-left: 0.5em;
+  th {
+    border-bottom: 1px $navi-color solid;
+    border-right: none;
 
-    &::before {
-      content: "\25B8  ";
+    small {
+      display: block;
+      font-weight: normal;
+      font-family: sans-serif;
+      font-size: x-small;
+      color: #444;
     }
   }
 }
@@ -1247,7 +1422,7 @@ table#index_columns {
 fieldset {
   .group-header {
     th {
-      background: #d5d5d5;
+      background: $bg-two;
     }
 
     + tr th {
@@ -1287,6 +1462,95 @@ fieldset {
   }
 }
 
+form {
+  &.create_table_form .pma-fieldset.tblFooters,
+  &#multi_edit_central_columns .pma-fieldset.tblFooters {
+    background: none;
+    border: none;
+  }
+}
+
+#db_or_table_specific_priv .tblFooters {
+  margin-top: -68px;
+}
+
+#edit_user_dialog,
+#add_user_dialog {
+  margin: 20px !important;
+}
+
+.config-form {
+  span.checkbox {
+    padding: 2px;
+    display: inline-block;
+  }
+
+  /* customized field */
+  .custom {
+    background: #ffc;
+  }
+
+  span.checkbox.custom {
+    padding: 1px;
+    border: 1px #edec90 solid;
+    background: #ffc;
+  }
+
+  img.ic_s_reload {
+    filter: invert(70%);
+  }
+
+  .field-error {
+    border-color: #a11 !important;
+  }
+
+  input {
+    &[type="text"],
+    &[type="password"],
+    &[type="number"] {
+      border: 1px #a7a6aa solid;
+      height: auto;
+
+      &:focus {
+        border: 1px #6676ff solid;
+        background: #f7fbff;
+      }
+    }
+  }
+
+  select,
+  textarea {
+    border: 1px #a7a6aa solid;
+    height: auto;
+
+    &:focus {
+      border: 1px #6676ff solid;
+      background: #f7fbff;
+    }
+  }
+
+  .field-comment-mark {
+    font-family: serif;
+    color: #007;
+    cursor: help;
+    padding: 0 0.2em;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .field-comment-warning {
+    color: #a00;
+  }
+
+  dd {
+    margin-left: 0.5em;
+
+    &::before {
+      content: "\25B8  ";
+    }
+  }
+}
+
 .click-hide-message {
   cursor: pointer;
 }
@@ -1305,13 +1569,6 @@ input#auto_increment_opt {
 }
 
 #placeholder {
-  position: relative;
-  border: 1px solid #aaa;
-  float: right;
-  overflow: hidden;
-  width: 450px;
-  height: 300px;
-
   .button {
     position: absolute;
     cursor: pointer;
@@ -1340,7 +1597,6 @@ input#auto_increment_opt {
   overflow: hidden;
   border-right: 0.1em solid #888;
   border-left: 0.1em solid #888;
-  border-radius: 0.3em;
 
   table,
   td,
@@ -1349,19 +1605,17 @@ input#auto_increment_opt {
     position: relative;
   }
 
-  .container {
+  .toggle-container {
     position: absolute;
 
-    td,
-    tr {
-      background: none !important;
+    td {
+      background: none;
     }
   }
 
   .toggleOn {
-    color: $white;
+    color: #fff;
     padding: 0 1em;
-    text-shadow: 0 0 0.2em $black;
   }
 
   .toggleOff {
@@ -1385,15 +1639,9 @@ input#auto_increment_opt {
   }
 }
 
-#table_name_col_no_outer {
-  margin-top: 45px;
-}
-
-#table_name_col_no {
-  position: fixed;
-  top: 100px !important;
-  width: 100%;
-  background: $white;
+form.append_fields_form .tblFooters {
+  background: none;
+  border: none;
 }
 
 #table_columns {
@@ -1401,9 +1649,10 @@ input#auto_increment_opt {
   overflow: auto;
 
   input {
-    &[type=text],
-    &[type=password],
-    &[type=number] {
+    &[type="text"],
+    &[type="password"],
+    &[type="number"],
+    &[type="date"] {
       width: 10em;
       box-sizing: border-box;
     }
@@ -1412,12 +1661,19 @@ input#auto_increment_opt {
   select {
     width: 10em;
     box-sizing: border-box;
+    margin: 6px;
   }
 }
 
-#openlayersmap {
-  width: 450px;
-  height: 300px;
+#placeholder {
+  position: relative;
+  border: 1px solid #aaa;
+  float: right;
+  overflow: hidden;
+
+  .button {
+    position: absolute;
+  }
 }
 
 .placeholderDrag {
@@ -1491,12 +1747,6 @@ input#auto_increment_opt {
       display: inline;
     }
   }
-
-  th.draggable {
-    span {
-      margin-right: 10px;
-    }
-  }
 }
 
 .modal-copy input {
@@ -1512,14 +1762,11 @@ input#auto_increment_opt {
 
 .cCpy {
   background: #333;
-  color: $white;
+  color: #fff;
   font-weight: bold;
   margin: 0.1em;
   padding: 0.3em;
   position: absolute;
-  text-shadow: -1px -1px $black;
-  box-shadow: 0 0 0.7em $black;
-  border-radius: 0.3em;
 }
 
 .cPointer {
@@ -1528,26 +1775,26 @@ input#auto_increment_opt {
 
   height: $height;
   width: $width;
-  margin-top: $height * -0.5;
-  margin-left: $width * -0.5;
-  background: url("../img/col_pointer.png");
+  margin-left: $height * -0.5;
+  margin-top: $width * -0.5;
   position: absolute;
+  background: url("../img/col_pointer.png");
 }
 
 .tooltip {
   background: #333 !important;
   opacity: 0.8 !important;
   z-index: 9999;
-  border: 1px solid $black !important;
-  border-radius: 0.3em !important;
-  text-shadow: -1px -1px $black !important;
-  font-size: 0.8em !important;
-  font-weight: bold !important;
-  padding: 1px 3px !important;
+  border: 1px solid #000 !important;
+  font-size: 10px !important;
+  font-weight: normal !important;
+  padding: 5px !important;
+  width: 260px;
+  line-height: 1.5;
 
   * {
     background: none !important;
-    color: $white !important;
+    color: #fff !important;
   }
 }
 
@@ -1574,10 +1821,9 @@ input#auto_increment_opt {
 }
 
 .cList {
-  background: #eee;
-  border: solid 1px #999;
+  background: #fff;
+  border: solid 1px #ccc;
   position: absolute;
-  box-shadow: 0 0.2em 0.5em #333;
   margin-left: 75%;
   right: 0;
   max-width: 100%;
@@ -1589,8 +1835,9 @@ input#auto_increment_opt {
     white-space: nowrap;
 
     &:hover {
-      background: #ddd;
+      background: $navi-background;
       cursor: pointer;
+      color: #fff;
     }
 
     input {
@@ -1600,27 +1847,38 @@ input#auto_increment_opt {
 }
 
 .showAllColBtn {
-  border-bottom: solid 1px #999;
-  border-top: solid 1px #999;
+  border-bottom: solid 1px #ccc;
+  border-top: solid 1px #ccc;
   cursor: pointer;
   font-size: 0.9em;
-  font-weight: bold;
+  font-family: $font-family-bold;
   padding: 0.35em 1em;
   text-align: center;
+  font-weight: normal;
 
   &:hover {
-    background: #ddd;
+    background: $navi-background;
+    cursor: pointer;
+    color: #fff;
   }
 }
 
-.turnOffSelect {
-  user-select: none;
+#page_content {
+  line-height: 1.5;
+}
+
+.navigation_separator {
+  color: #eee;
+  display: inline-block;
+  font-size: 1.5em;
+  text-align: center;
+  height: 1.4em;
 }
 
 .navigation {
-  margin: 0.8em 0;
-  border-radius: 5px;
-  background: linear-gradient(#eee, #ccc);
+  width: 100%;
+  background-color: $navi-background;
+  color: $navi-color;
 
   td {
     margin: 0;
@@ -1630,53 +1888,47 @@ input#auto_increment_opt {
   }
 
   input {
-    &[type=submit] {
-      background: none;
-      border: 0;
+    &[type="submit"] {
+      background: $navi-background;
+      color: $navi-color;
+      border: none;
       filter: none;
-      margin: 0;
-      padding: 0.8em 0.5em;
-      border-radius: 0;
+      margin: 5px;
+      padding: 0.4em;
 
       &:hover {
-        color: $white;
+        color: $button-color;
         cursor: pointer;
-        text-shadow: none;
-        background: linear-gradient(#333, #555);
+        background-color: $th-color;
       }
     }
 
     &.edit_mode_active {
-      color: $white;
+      color: $button-color;
       cursor: pointer;
-      text-shadow: none;
-      background: linear-gradient(#333, #555);
-    }
-  }
-
-  .btn-link {
-    color: $body-color;
-
-    &:hover {
-      color: $white;
-      background-image: linear-gradient(#333, #555);
-      text-decoration: none;
+      background-color: $th-color;
     }
   }
 
   select {
     margin: 0 0.8em;
+    border: none;
+  }
+
+  input[type="text"] {
+    border: none;
   }
 }
 
-.navigation_separator {
-  color: #999;
-  display: inline-block;
-  font-size: 1.5em;
-  text-align: center;
-  height: 1.4em;
-  width: 1.2em;
-  text-shadow: 1px 0 $white;
+.navigation_goto {
+  width: 100%;
+}
+
+.insertRowTable {
+  td,
+  th {
+    vertical-align: middle;
+  }
 }
 
 .cEdit {
@@ -1684,15 +1936,19 @@ input#auto_increment_opt {
   padding: 0;
   position: absolute;
 
-  input[type=text] {
-    background: $white;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  input {
+    &[type="text"],
+    &[type="password"],
+    &[type="number"] {
+      background: #fff;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
   }
 
   .edit_area {
-    background: $white;
+    background: #fff;
     border: 1px solid #999;
     min-width: 10em;
     padding: 0.3em 0.5em;
@@ -1713,17 +1969,16 @@ input#auto_increment_opt {
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 0;
-    margin: 0;
-    resize: both;
+    margin-top: 10px;
   }
 
   .edit_box_posting {
-    background: $white url('../img/ajax_clock_small.gif') no-repeat right center;
+    background: #fff url("../img/ajax_clock_small.gif") no-repeat right center;
     padding-right: 1.5em;
   }
 
   .edit_area_loading {
-    background: $white url("../img/ajax_clock_small.gif") no-repeat center;
+    background: #fff url("../img/ajax_clock_small.gif") no-repeat center;
     height: 10em;
   }
 
@@ -1735,22 +1990,17 @@ input#auto_increment_opt {
 }
 
 .saving_edited_data {
-  background: url('../img/ajax_clock_small.gif') no-repeat left;
+  background: url("../img/ajax_clock_small.gif") no-repeat left;
   padding-left: 20px;
 }
 
-.relationalTable {
-  td {
-    vertical-align: top;
-  }
-
-  select {
-    width: 125px;
-    margin-right: 5px;
-  }
+.relationalTable select {
+  width: 125px;
+  margin-right: 5px;
 }
 
-// css for timepicker
+/* css for timepicker */
+
 .ui-timepicker-div {
   .ui-widget-header {
     margin-bottom: 8px;
@@ -1793,27 +2043,20 @@ input#auto_increment_opt {
   }
 }
 
+.ui_tpicker_time_input {
+  width: 100%;
+}
+
 body .ui-widget {
   font-size: 1em;
 }
 
+body #ui-datepicker-div {
+  z-index: 9999 !important;
+}
+
 .ui-dialog .pma-fieldset legend a {
   color: #235a81;
-}
-
-.ui-draggable {
-  z-index: 801;
-}
-
-// over-riding jqplot-yaxis class
-.jqplot-yaxis {
-  left: 0 !important;
-  min-width: 25px;
-  width: auto;
-}
-
-.jqplot-axis {
-  overflow: hidden;
 }
 
 div#page_content div {
@@ -1839,8 +2082,19 @@ table.show_create {
 }
 
 #alias_modal {
-  table {
-    width: 100%;
+  table th {
+    vertical-align: middle;
+    padding-left: 1em;
+  }
+
+  label.col-2 {
+    min-width: 20%;
+    display: inline-block;
+  }
+
+  select {
+    width: 25%;
+    margin-right: 2em;
   }
 
   label {
@@ -1848,15 +2102,11 @@ table.show_create {
   }
 }
 
-.ui-dialog {
-  position: fixed;
-}
-
 .small_font {
   font-size: smaller;
 }
 
-// Console styles
+/* Console styles */
 #pma_console_container {
   width: 100%;
   position: fixed;
@@ -1865,9 +2115,13 @@ table.show_create {
   z-index: 100;
 }
 
+textarea {
+  resize: both;
+}
+
 #pma_console {
   position: relative;
-  margin-left: $navigation-width;
+  margin-left: 250px;
 
   .templates {
     display: none;
@@ -1879,8 +2133,8 @@ table.show_create {
 
   .toolbar {
     position: relative;
-    background: #ccc;
-    border-top: solid 1px #aaa;
+    background: $th-background;
+    border-top: solid 1px #ccc;
     cursor: n-resize;
 
     span {
@@ -1892,8 +2146,7 @@ table.show_create {
 
       &:not(:hover) {
         display: inline-block;
-        border-top-right-radius: 3px;
-        border-right: solid 1px #aaa;
+        border-right: solid 1px #ccc;
       }
 
       > .button {
@@ -1929,17 +2182,7 @@ table.show_create {
     cursor: pointer;
   }
 
-  .message span.action:hover,
-  .toolbar .button:hover,
-  .switch_button:hover {
-    background: #ddd;
-  }
-
   .toolbar {
-    .button.active {
-      background: #ddd;
-    }
-
     .text {
       font-weight: bold;
     }
@@ -1947,10 +2190,6 @@ table.show_create {
     .button,
     .text {
       margin-right: 0.4em;
-    }
-
-    .button,
-    .text {
       float: right;
     }
   }
@@ -1959,21 +2198,21 @@ table.show_create {
     overflow-x: hidden;
     overflow-y: auto;
     margin-bottom: -65px;
-    border-top: solid 1px #aaa;
-    background: $white;
+    border-top: solid 1px #ccc;
+    background: #fff;
     padding-top: 0.4em;
 
     &.console_dark_theme {
-      background: $black;
-      color: $white;
+      background: #000;
+      color: #fff;
 
       .CodeMirror-wrap {
-        background: $black;
-        color: $white;
+        background: #000;
+        color: #fff;
       }
 
       .action_content {
-        color: $black;
+        color: #000;
       }
 
       .message {
@@ -1981,7 +2220,7 @@ table.show_create {
       }
 
       .CodeMirror-cursor {
-        border-color: $white;
+        border-color: #fff;
       }
 
       .cm-keyword {
@@ -2120,9 +2359,10 @@ table.show_create {
       bottom: 100%;
       background: #ccc;
       border: solid 1px #aaa;
-      border-top-left-radius: 3px;
     }
+  }
 
+  .message {
     &.bookmark .text.targetdb,
     .text.query_time {
       margin: 0;
@@ -2139,7 +2379,7 @@ table.show_create {
     }
 
     .text {
-      background: $white;
+      background: #fff;
     }
 
     &.collapsed {
@@ -2156,17 +2396,11 @@ table.show_create {
       padding: 0 4px;
       top: 0;
       background: #369;
-      color: $white;
-      border-radius: 3px;
+      color: #fff;
 
       &.shared {
         background: #396;
       }
-    }
-
-    &.expanded .bookmark_label {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
     }
   }
 
@@ -2179,7 +2413,7 @@ table.show_create {
     width: 100%;
     position: absolute;
     top: 0;
-    background: #666;
+    background: #ccc;
     display: none;
     cursor: pointer;
     z-index: 200;
@@ -2198,13 +2432,7 @@ table.show_create {
 
     &.show {
       left: 6%;
-      box-shadow: -2px 1px 4px -1px #999;
     }
-  }
-
-  .button.hide,
-  .message span.text.hide {
-    display: none;
   }
 }
 
@@ -2226,9 +2454,16 @@ table.show_create {
     }
   }
 
-  input[type=text] {
+  input[type="text"] {
     margin: 0;
     padding: 2px 4px;
+  }
+}
+
+#pma_console {
+  .button.hide,
+  .message span.text.hide {
+    display: none;
   }
 }
 
@@ -2303,7 +2538,8 @@ table.show_create {
   }
 }
 
-// Code mirror console style
+/* Code mirror console style */
+
 .cm-s-pma {
   .CodeMirror-code {
     font-family: Monaco, Consolas, monospace;
@@ -2332,7 +2568,7 @@ table.show_create {
   }
 }
 
-// PMA drop-improt style
+/* PMA drop-improt style */
 
 .pma_drop_handler {
   display: none;
@@ -2357,19 +2593,15 @@ table.show_create {
   width: 400px;
   border: 1px solid #999;
   background: #f3f3f3;
-  border-radius: 4px;
-  box-shadow: 2px 2px 5px #ccc;
 
   h2 {
     background-color: #bbb;
     padding: 0.1em 0.3em;
     margin-top: 0;
     margin-bottom: 0;
-    color: $white;
+    color: #fff;
     font-size: 1.6em;
     font-weight: normal;
-    text-shadow: 0 1px 0 #777;
-    box-shadow: 1px 1px 15px #999 inset;
   }
 }
 
@@ -2378,11 +2610,9 @@ table.show_create {
   padding: 0.1em 0.3em;
   margin-top: 0;
   margin-bottom: 0;
-  color: $white;
+  color: #fff;
   font-size: 1.6em;
   font-weight: normal;
-  text-shadow: 0 1px 0 #777;
-  box-shadow: 1px 1px 15px #999 inset;
 }
 
 .pma_sql_import_status {
@@ -2448,8 +2678,6 @@ table.show_create {
   background: white;
   min-height: 300px;
   z-index: 800;
-  box-shadow: 0 0 15px #999;
-  border-radius: 10px;
   cursor: move;
 
   h2 .close {
@@ -2497,75 +2725,112 @@ meter {
   }
 }
 
-// styles for sortable tables created with tablesorter jquery plugin
-th {
-  &.header {
-    cursor: pointer;
-    color: #235a81;
+/* styles for jQuery-ui to support rtl languages */
 
-    &:hover {
-      text-decoration: underline;
+body {
+  .ui-dialog {
+    .ui-dialog-titlebar-close {
+      right: 0.3em;
+      left: initial;
     }
 
-    .sorticon {
-      width: 16px;
-      height: 16px;
-      background-repeat: no-repeat;
-      background-position: right center;
-      display: inline-table;
-      vertical-align: middle;
+    .ui-dialog-title {
+      float: left;
+    }
+
+    .ui-dialog-buttonpane .ui-dialog-buttonset {
       float: right;
     }
   }
 
-  &.headerSortUp .sorticon {
-    background-image: url("../img/sort-desc.svg");
+  .ui-corner-all,
+  .ui-corner-top,
+  .ui-corner-left,
+  .ui-corner-tl {
+    border-top-left-radius: 0;
   }
 
-  &.headerSortDown {
-    &:hover .sorticon {
-      background-image: url("../img/sort-desc.svg");
-    }
-
-    .sorticon {
-      background-image: url("../img/sort-asc.svg");
-    }
+  .ui-corner-all,
+  .ui-corner-top,
+  .ui-corner-right,
+  .ui-corner-tr {
+    border-top-right-radius: 0;
   }
 
-  &.headerSortUp:hover .sorticon {
-    background-image: url("../img/sort-asc.svg");
+  .ui-corner-all,
+  .ui-corner-bottom,
+  .ui-corner-left,
+  .ui-corner-bl {
+    border-bottom-left-radius: 0;
+  }
+
+  .ui-corner-all,
+  .ui-corner-bottom,
+  .ui-corner-right,
+  .ui-corner-br {
+    border-bottom-right-radius: 0;
+  }
+
+  .ui-dialog {
+    padding: 0;
+
+    .ui-widget-header {
+      color: $button-color;
+      border: none;
+      background-color: $navi-background;
+      background-image: none;
+    }
+
+    .ui-dialog-title {
+      padding: 5px;
+      font-weight: normal;
+    }
+
+    .ui-dialog-buttonpane button {
+      font-family: $font-family-base;
+      color: $button-color;
+      background-color: $navi-background;
+      background-image: none;
+      border: 1px solid $button-background;
+
+      &.ui-state-hover {
+        background-color: $button-hover;
+        border: 1px solid $button-hover;
+      }
+
+      &.ui-state-active {
+        background-color: #333;
+        border: 1px solid #333;
+      }
+    }
   }
 }
 
-// end of styles of sortable tables
-
-// styles for jQuery-ui to support rtl languages
-body .ui-dialog {
-  .ui-dialog-titlebar-close {
-    right: 0.3em;
-    left: initial;
-  }
-
-  .ui-dialog-title {
-    float: left;
-  }
-
-  .ui-dialog-buttonpane .ui-dialog-buttonset {
-    float: right;
-  }
-
-  .ui-dialog-buttonpane .ui-dialog-buttonset button {
-    color: $white;
-    background: none;
-    background-color: #6c757d !important;
-    border-color: #6c757d;
-  }
-
-  .ui-dialog-buttonpane .ui-dialog-buttonset button:hover {
-    background-color: #5a6268 !important;
-  }
+#tooltip_editor {
+  font-size: 12px;
+  background-color: #fff;
+  opacity: 0.95;
+  filter: alpha(opacity=95);
+  padding: 5px;
 }
-// end of styles for jQuery-ui to support rtl languages
+
+#tooltip_font {
+  font-weight: bold;
+}
+
+#selection_box {
+  z-index: 1000;
+  height: 205px;
+  position: absolute;
+  background-color: #87ceeb;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  pointer-events: none;
+}
+
+#filterQueryText {
+  vertical-align: baseline;
+}
 
 /* templates/database/multi_table_query */
 
@@ -2592,112 +2857,10 @@ body .ui-dialog {
   }
 }
 
-// templates/database/designer
-// side menu
-#name-panel {
-  overflow: hidden;
-}
-
 // Enable scrollable blocks of code
 .pre-scrollable {
   max-height: 340px;
   overflow-y: scroll;
-}
-
-@media only screen and (max-width: 768px) {
-  .responsivetable {
-    overflow-x: auto;
-  }
-
-  body#loginform div.container {
-    width: 100%;
-  }
-
-  .largescreenonly {
-    display: none;
-  }
-
-  .width96 {
-    width: 96% !important;
-  }
-
-  #page_nav_icons {
-    display: none;
-  }
-
-  #table_name_col_no {
-    top: 62px;
-  }
-
-  .tdblock tr td {
-    display: block;
-  }
-
-  #table_columns {
-    margin-top: 60px;
-
-    .tablesorter {
-      min-width: 100%;
-    }
-  }
-
-  .doubleFieldset .pma-fieldset {
-    width: 98%;
-  }
-
-  div#serverstatusquerieschart {
-    width: 100%;
-    height: 450px;
-  }
-
-  .ui-dialog {
-    margin: 1%;
-    width: 95% !important;
-  }
-}
-
-#tooltip_editor {
-  font-size: 12px;
-  background-color: $white;
-  opacity: 0.95;
-  filter: alpha(opacity=95);
-  padding: 5px;
-}
-
-#tooltip_font {
-  font-weight: bold;
-}
-
-#selection_box {
-  z-index: 1000;
-  height: 205px;
-  position: absolute;
-  background-color: #87ceeb;
-  opacity: 0.4;
-  filter: alpha(opacity=40);
-  pointer-events: none;
-}
-
-#filterQueryText {
-  vertical-align: baseline;
-}
-
-.ui_tpicker_hour_slider,
-.ui_tpicker_minute_slider,
-.ui_tpicker_second_slider,
-.ui_tpicker_millisec_slider,
-.ui_tpicker_microsec_slider {
-  margin-left: 40px;
-  margin-top: 4px;
-  height: 0.75rem;
-}
-
-.ui-timepicker-div dl .ui_tpicker_timezone select {
-  margin-left: 50px;
-}
-
-.ui_tpicker_time_input {
-  width: 100%;
 }
 
 // Extra large devices (large desktops, 1200px and up)

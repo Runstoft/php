@@ -10,6 +10,7 @@
   td {
     color: #000;
     background-color: #fff;
+    font-size: 12px;
   }
 
   // To remove link text decoration
@@ -54,6 +55,31 @@
     border: 0.1em solid #000;
   }
 
+  th {
+    &.column_heading,
+    &.column_action {
+      border: 0.1em solid #000;
+    }
+  }
+
+  table {
+    tr {
+      &.odd,
+      &.even {
+        border-left: 0.1em solid #000;
+      }
+
+      &.odd th,
+      &.even th {
+        border-bottom: 0.1em solid #000;
+      }
+    }
+
+    &.data th {
+      border-bottom: 0.1em solid #000;
+    }
+  }
+
   // Position the main content
   #page_content {
     position: absolute;
@@ -63,9 +89,9 @@
     float: none;
   }
 
+  // For the Success message div
   .sqlOuter {
     color: black;
-    background-color: #000;
   }
 
   // For hiding 'Open a New phpMyAdmin Window' button

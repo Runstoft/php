@@ -1,11 +1,12 @@
-$textarea-cols: 40;
-$textarea-rows: 15;
+// Styles for CodeMirror editor for the Metro theme
+
+$textarea-cols: 40 !default;
+$textarea-rows: 15 !default;
 
 .CodeMirror {
+  font-family: $font-family-monospace !important;
   height: 20rem;
-  border: $card-border-width solid $card-border-color;
-
-  @include border-radius($card-border-radius);
+  border: 1px solid #ccc;
 }
 
 // Code mirror default style (do not affect the console style)
@@ -17,14 +18,22 @@ $textarea-rows: 15;
   }
 }
 
+#pma_console .CodeMirror {
+  border: none;
+}
+
+.CodeMirror * {
+  font-family: $font-family-monospace;
+}
+
 #inline_editor_outer .CodeMirror {
   height: ceil($textarea-rows * 0.4em);
+  margin-bottom: 10px;
 }
 
 .insertRowTable .CodeMirror {
   min-height: ceil($textarea-rows * 0.6em);
   min-width: ceil($textarea-cols * 0.6em);
-  border: 1px solid #a9a9a9;
 }
 
 #pma_console .CodeMirror-gutters {
