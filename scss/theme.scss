@@ -1,13 +1,12 @@
-@import "font";
 @import "variables";
 @import "../../bootstrap/scss/bootstrap";
 @import "common";
-@import "enum-editor";
+@import "../../pmahomme/scss/enum-editor";
 @import "../../bootstrap/scss/gis";
 @import "navigation";
-@import "designer";
-@import "codemirror";
-@import "jqplot";
+@import "../../pmahomme/scss/designer";
+@import "../../pmahomme/scss/codemirror";
+@import "../../pmahomme/scss/jqplot";
 @import "icons";
 @import "reboot";
 @import "tables";
@@ -19,4 +18,4 @@
 @import "alert";
 @import "list-group";
 @import "modal";
-@import "print";
+@import "../../pmahomme/scss/print";

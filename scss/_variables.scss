@@ -1,163 +1,72 @@
 // configures general layout for detailed layout configuration please refer to the css files
 
-$navi-width: 250px;
+// navi frame
 
-// Theme color scheme
-// Values: "teal", "redmond", "blueeyes", "mono", "win"
-// Default: "win"
-// Set this value for the desired color scheme
-$color-scheme: win !default;
+// navi frame width
+$navi-width: 240px;
 
-$navi-color: #eee;
-$navi-background: #377796;
-$navi-background-light: #428eb4;
-$navi-pointer-color: #333;
-$navi-pointer-background: #377796;
-$navi-database-name-color: #333;
-$navi-hover-background: #428eb4;
-$main-color: #444;
-$body-bg: #fff;
-$browse-pointer-color: #377796;
+// foreground (text) color for the navi frame
+$navi-color: #000;
+
+// background for the navi frame
+$navi-background: #d0dce0;
+
+// foreground (text) color of the pointer in navi frame
+$navi-pointer-color: #000;
+
+// background of the pointer in navi frame
+$navi-pointer-background: #99c;
+
+// main frame
+
+// foreground (text) color for the main frame
+$main-color: #000;
+
+// foreground (text) color of the pointer in browse mode
+$browse-pointer-color: #000;
+
+// background of the pointer in browse mode
+$browse-pointer-background: #cfc;
+
+// foreground (text) color of the marker (visually marks row by clicking on it)
+// in browse mode
 $browse-marker-color: #000;
-$browse-warning-color: #d44a26;
-$browse-success-color: #01a31c;
-$browse-gray-color: #ccc;
-$browse-marker-background: #eee;
-$border-color: #ddd;
-$button-color: #fff;
-$button-background: #377796;
-$button-hover: #428eb4;
-$th-background: #f7f7f7;
-$th-disabled-background: #f3f3f3;
-$th-color: #666;
-$th-pointer-color: #000;
-$bg-one: #f7f7f7;
-$bg-two: #fff;
-$blue-header: #3a7ead;
 
-@if $color-scheme == teal {
-  $navi-color: #fff;
-  $navi-background: #004d60;
-  $navi-background-light: #04627c;
-  $navi-pointer-color: #666;
-  $navi-pointer-background: #004d60;
-  $navi-database-name-color: #fff;
-  $navi-hover-background: #216475;
-  $main-color: #444;
-  $body-bg: #fff;
-  $browse-pointer-color: #004d60;
-  $browse-marker-color: #000;
-  $browse-warning-color: #d44a26;
-  $browse-success-color: #01a31c;
-  $browse-gray-color: #ccc;
-  $browse-marker-background: #eee;
-  $border-color: #ddd;
-  $button-color: #fff;
-  $button-background: #aaa;
-  $button-hover: #000;
-  $th-background: #f7f7f7;
-  $th-disabled-background: #f3f3f3;
-  $th-color: #666;
-  $th-pointer-color: #000;
-  $bg-one: #f7f7f7;
-  $bg-two: #fff;
-  $blue-header: #3a7ead;
-} @else if $color-scheme == redmond {
-  $navi-color: #fff;
-  $navi-background: #780505;
-  $navi-background-light: #a10707;
-  $navi-pointer-color: #666;
-  $navi-pointer-background: #780505;
-  $navi-database-name-color: #fff;
-  $navi-hover-background: #a10707;
-  $main-color: #444;
-  $body-bg: #fff;
-  $browse-pointer-color: #780505;
-  $browse-marker-color: #000;
-  $browse-warning-color: #d44a26;
-  $browse-success-color: #01a31c;
-  $browse-gray-color: #ccc;
-  $browse-marker-background: #eee;
-  $border-color: #ddd;
-  $button-color: #fff;
-  $button-background: #aaa;
-  $button-hover: #000;
-  $th-background: #f7f7f7;
-  $th-disabled-background: #f3f3f3;
-  $th-color: #666;
-  $th-pointer-color: #000;
-  $bg-one: #f7f7f7;
-  $bg-two: #fff;
-  $blue-header: #3a7ead;
-} @else if $color-scheme == blueeyes {
-  $navi-color: #fff;
-  $navi-background: #377796;
-  $navi-background-light: #428eb4;
-  $navi-pointer-color: #666;
-  $navi-pointer-background: #377796;
-  $navi-database-name-color: #fff;
-  $navi-hover-background: #428eb4;
-  $main-color: #444;
-  $body-bg: #fff;
-  $browse-pointer-color: #377796;
-  $browse-marker-color: #000;
-  $browse-warning-color: #d44a26;
-  $browse-success-color: #01a31c;
-  $browse-gray-color: #ccc;
-  $browse-marker-background: #eee;
-  $border-color: #ddd;
-  $button-color: #fff;
-  $button-background: #377796;
-  $button-hover: #000;
-  $th-background: #f7f7f7;
-  $th-disabled-background: #f3f3f3;
-  $th-color: #666;
-  $th-pointer-color: #000;
-  $bg-one: #f7f7f7;
-  $bg-two: #fff;
-  $blue-header: #3a7ead;
-} @else if $color-scheme == mono {
-  $navi-color: #fff;
-  $navi-background: #666;
-  $navi-background-light: #999;
-  $navi-pointer-color: #666;
-  $navi-pointer-background: #666;
-  $navi-database-name-color: #fff;
-  $navi-hover-background: #999;
-  $main-color: #444;
-  $body-bg: #fff;
-  $browse-pointer-color: #666;
-  $browse-marker-color: #000;
-  $browse-warning-color: #666;
-  $browse-success-color: #888;
-  $browse-gray-color: #ccc;
-  $browse-marker-background: #eee;
-  $border-color: #ddd;
-  $button-color: #fff;
-  $button-background: #aaa;
-  $button-hover: #000;
-  $th-background: #f7f7f7;
-  $th-disabled-background: #f3f3f3;
-  $th-color: #666;
-  $th-pointer-color: #000;
-  $bg-one: #f7f7f7;
-  $bg-two: #fff;
-  $blue-header: #555;
-}
+// background of the marker (visually marks row by clicking on it) in browse mode
+$browse-marker-background: #fc9;
+
+// tables
+
+// border
+$border: 0;
+// table header and footer color
+$th-background: #d3dce3;
+// table header and footer background
+$th-color: #000;
+// table data row background
+$bg-one: #e5e5e5;
+// table data row background, alternate
+$bg-two: #d5d5d5;
 
 // Bootstrap
 // ---------
 
 // Body
 
+$body-bg: #f5f5f5;
 $body-color: $main-color;
+$primary: $navi-pointer-background;
 
 // Links
 
-$link-color: $browse-pointer-color;
+$link-color: #00f;
 $link-decoration: none;
-$link-hover-color: $browse-pointer-color;
+$link-hover-color: #f00;
 $link-hover-decoration: underline;
+
+// Buttons
+
+$btn-border-color: black;
 
 // Components
 
@@ -165,119 +74,108 @@ $border-radius: 0;
 
 // Typography
 
-$font-family-base: "Open Sans", "Segoe UI", sans-serif;
-$font-family-monospace: "Consolas", "Lucida Grande", monospace;
+$font-family-base: sans-serif;
+$font-family-monospace: monospace;
 
-$font-family-light: "Open Sans Light", "Segoe UI Light", "Segoe UI", sans-serif;
-$font-family-bold: "Open Sans Bold", sans-serif;
-$font-family-extra-bold: "Open Sans Extrabold", "Segoe Black", sans-serif;
+$font-size-base: 0.82rem;
 
-$font-size-base: 0.6875rem; // 11px
-$line-height-base: 1;
-
-$h1-font-size: 3em;
-$h2-font-size: 3.6em;
+$h1-font-size: 140%;
+$h2-font-size: 120%;
 $h3-font-size: 1rem;
 
-$headings-font-weight: normal;
+$headings-font-weight: bold;
 
 // Tables
 
-$table-cell-padding-y: 0.6em;
-$table-cell-padding-x: 0.6em;
+$table-cell-padding-y: 0.1em;
+$table-cell-padding-x: 0.5em;
 $table-cell-padding-y-sm: $table-cell-padding-y;
 $table-cell-padding-x-sm: $table-cell-padding-x;
-$table-bg: $bg-two;
-$table-head-bg: #fff;
-$table-head-color: $th-color;
+$table-bg: $bg-one;
 $table-striped-order: even;
-$table-hover-color: $th-pointer-color;
-$table-hover-bg: $browse-marker-background;
-$table-border-width: 0;
+$table-striped-bg: $bg-two;
+$table-hover-bg: $browse-pointer-background;
+$table-hover-color: $browse-pointer-color;
+$table-head-color: $th-color;
+$table-head-bg: $th-background;
 $table-caption-color: $table-head-color;
-
-// Buttons
-
-$enable-transitions: false;
-
-$primary: $browse-pointer-color;
-$secondary: $browse-gray-color;
-
-$btn-border-radius: 0;
-$btn-line-height: 1;
-$btn-padding-x: 0.5rem;
 
 // Dropdowns
 
-$dropdown-border-radius: 0;
-
-// Forms
-
-$input-border-radius: 0;
-$form-check-input-margin-y: 0;
-$label-margin-bottom: 0;
+$dropdown-padding-y: 0;
+$dropdown-item-padding-y: 0;
+$dropdown-item-padding-x: 0;
 
 // Navs
 
-$nav-tabs-border-color: #ddd;
-$nav-tabs-link-active-border-color: #ddd #ddd #fff;
-$nav-tabs-link-hover-border-color: $bg-two $bg-two #ddd;
-$nav-tabs-link-active-color: #000;
+$nav-tabs-border-color: transparent;
+$nav-tabs-link-active-border-color: $bg-two $bg-two #f5f5f5;
+$nav-tabs-link-hover-border-color: $bg-two $bg-two #f5f5f5;
+$nav-tabs-link-active-color: #00f;
+$nav-tabs-link-active-bg: $bg-one;
 
 // Navbar
 
+$enable-transitions: false;
 $enable-caret: false;
 $navbar-padding-y: 0;
 $navbar-padding-x: 0;
-$navbar-nav-link-padding-x: 0;
-$navbar-nav-link-padding-y: 0;
-$navbar-light-color: #666;
-$navbar-light-hover-color: #333;
-$navbar-light-active-color: #666;
-$navbar-light-disabled-color: #666;
+$navbar-nav-link-padding-x: 2px;
+$navbar-nav-link-padding-y: 2px;
+$navbar-light-color: #00f;
+$navbar-light-hover-color: #f00;
+$navbar-light-active-color: #00f;
+$navbar-light-disabled-color: #00f;
 
 // Pagination
 
-$pagination-bg: $th-background;
-$pagination-hover-bg: $browse-marker-background;
-$pagination-border-color: $border-color;
-$pagination-hover-border-color: $border-color;
-$pagination-active-border-color: $border-color;
-$pagination-disabled-border-color: $border-color;
+$pagination-border-color: $main-color;
+$pagination-hover-border-color: $main-color;
+$pagination-active-border-color: $main-color;
+$pagination-disabled-border-color: $main-color;
 
 // Card
 
 $card-border-radius: 0;
+$card-border-color: $main-color;
 $card-cap-bg: $th-background;
-$card-bg: $th-background;
+$card-bg: $bg-one;
+$card-spacer-y: 0.5em;
+$card-spacer-x: 0.5em;
 
 // Accordion
 
 $accordion-button-padding-y: 0.375rem;
-$accordion-button-padding-x: 1rem;
-$accordion-button-active-color: $button-color;
-$accordion-button-active-bg: $button-background;
+$accordion-button-padding-x: 0.75rem;
+$accordion-button-color: #00f;
+$accordion-button-active-color: #00f;
+$accordion-button-active-bg: $bg-one;
 
 // Breadcrumbs
 
-$breadcrumb-navbar-padding-y: 0.89rem;
-$breadcrumb-navbar-padding-x: 2rem;
+$breadcrumb-navbar-padding-y: 0.1rem;
+$breadcrumb-navbar-padding-x: 2.2em;
 $breadcrumb-navbar-margin-bottom: 0;
-$breadcrumb-navbar-bg: $navi-background;
-$breadcrumb-divider-color: $button-color;
-$breadcrumb-divider: none;
+$breadcrumb-navbar-bg: white;
+$breadcrumb-divider-color: inherit;
+$breadcrumb-divider: quote("»");
 
 // Alert
 
-$alert-margin-bottom: 1em;
+$alert-margin-bottom: 0.2em;
 $alert-border-radius: 0;
-$alert-border-width: 0;
+$alert-border-width: 2px;
 
 // List group
 
 $list-group-bg: inherit;
+$list-group-item-padding-x: 0.75rem;
+$list-group-item-padding-y: 0.375rem;
 
 // Modals
 
 $modal-content-border-radius: 0;
-$modal-header-padding-y: 0.5rem;
+$modal-header-border-color: #000;
+$modal-inner-padding: 0.75rem;
+$modal-footer-margin-between: 0.1rem;
+$modal-header-padding-y: 0.4rem;
